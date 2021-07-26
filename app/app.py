@@ -12,13 +12,13 @@ app.config['MYSQL_DATABASE_HOST'] = 'db'
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
 app.config['MYSQL_DATABASE_PORT'] = 3306
-app.config['MYSQL_DATABASE_DB'] = 'citiesData'
+app.config['MYSQL_DATABASE_DB'] = 'letterData'
 mysql.init_app(app)
 
 
 @app.route('/', methods=['GET'])
 def index():
-    user = {'username': 'Cities Project'}
+    user = {'username': 'Letter Frequency Project'}
     cursor = mysql.get_db().cursor()
     cursor.execute('SELECT * FROM letter_frequency')
     result = cursor.fetchall()
@@ -45,10 +45,12 @@ def form_edit_get(city_id):
 def form_update_post(city_id):
     cursor = mysql.get_db().cursor()
     inputData = (request.form.get('Letter'), request.form.get('Frequency'), request.form.get('Percentage'), city_id)
-    sql_update_query = """UPDATE letter_frequency t SET t.Letter = %s, t.Frequency = %s, t.Percentage = %s WHERE t.id = %s """
+    sql_update_query = """UPDATE letter_frequency t SET t.Letter = %s, t.Frequency = %s, t.Percentage = %s WHERE t.id 
+    = %s """
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
+
 
 @app.route('/cities/new', methods=['GET'])
 def form_insert_get():
@@ -63,6 +65,7 @@ def form_insert_post():
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
+
 
 @app.route('/delete/<int:city_id>', methods=['POST'])
 def form_delete_post(city_id):
