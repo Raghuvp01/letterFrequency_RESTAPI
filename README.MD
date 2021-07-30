@@ -5,8 +5,13 @@ This Project is about letters frequency using Python, flask, MySQL and Docker
 # SQL data screenshot
 ![pycharm data query](screenshots/query.PNG)
 # Screenshots of project
+### Homepage
 ![Home Page](screenshots/Homepage.PNG)  
-![View Page](screenshots/viewpage.PNG)  
-![Edit Page](screenshots/editpage.PNG)  
-![New Page](screenshots/newpage.PNG)  
+### Viewpage
+![View Page](screenshots/viewpage.PNG)
+### Editpage
+![Edit Page](screenshots/editpage.PNG)
+### Newpage
+![New Page](screenshots/newpage.PNG)
+### API JSON Endpoint
 ![JSON Endpoint](screenshots/JSON.PNG)  
