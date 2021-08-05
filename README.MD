@@ -4,9 +4,9 @@ This Project is about letters frequency using Python, flask, MySQL and Docker
 ### GET
 ![Postman get request](screenshots/Postman.PNG)
 ### POST
-![Postman post request](screenshots/post.PNG)
+![Postman post request](screenshots/Post.PNG)
 ### PUT
-![Postman put request](screenshots/put.PNG)
+![Postman put request](screenshots/Put.PNG)
 ### DELETE
 ![Postman delete request](screenshots/delete.PNG)
 ### Final records
